@@ -1,0 +1,112 @@
+/* Resetování některých stylů pro lepší kompatibilitu */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Nastavení základních barev a písma */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Hlavní kontejner pro obsah */
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efekt pro kontejner při najetí */
+.container:hover {
+    transform: scale(1.05);
+}
+
+/* Titulky */
+h1 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Text pro zobrazování oblíbeného filmu */
+#favoriteMovieText {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Input pro zadání názvu filmu */
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+/* Efekt na input, když je aktivní */
+input[type="text"]:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+/* Tlačítka */
+.button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efekt pro tlačítka při najetí */
+.button:hover {
+    background-color: #357ABD;
+}
+
+/* Vzhled pro hlavní a nastavovací stránku */
+#mainPage, #setMoviePage {
+    display: none;
+}
+
+#mainPage {
+    display: block;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Mobilní responsivita */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
