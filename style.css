@@ -8,23 +8,38 @@
 /* Nastavení základních barev a písma */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
+    background: linear-gradient(45deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF); /* Duhový gradient */
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Animace pro pozadí (duhový gradient se pohybuje) */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Hlavní kontejner pro obsah */
 .container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
     padding: 30px;
     width: 400px;
     text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
@@ -35,52 +50,57 @@ body {
 
 /* Titulky */
 h1 {
-    font-size: 2.2em;
-    color: #333;
+    font-size: 2.4em;
+    color: white;
     margin-bottom: 20px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 /* Text pro zobrazování oblíbeného filmu */
 #favoriteMovieText {
-    font-size: 1.1em;
-    color: #555;
+    font-size: 1.2em;
+    color: #ddd;
     margin-bottom: 20px;
+    font-weight: 500;
 }
 
 /* Input pro zadání názvu filmu */
 input[type="text"] {
     width: 80%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: border-color 0.3s;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    color: #333;
 }
 
-/* Efekt na input, když je aktivní */
 input[type="text"]:focus {
-    border-color: #4A90E2;
+    background-color: #fff;
+    border-color: #4B0082; /* Indikátor duhového motivu */
     outline: none;
 }
 
 /* Tlačítka */
 .button {
-    background-color: #4A90E2;
-    color: white;
+    background-color: #ff0;
+    color: #333;
     border: none;
-    padding: 12px 30px;
+    padding: 15px 30px;
     margin: 10px;
-    border-radius: 5px;
-    font-size: 1.1em;
+    border-radius: 30px;
+    font-size: 1.2em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Efekt pro tlačítka při najetí */
 .button:hover {
-    background-color: #357ABD;
+    background-color: #FF7F00;
+    transform: scale(1.1);
 }
 
 /* Vzhled pro hlavní a nastavovací stránku */
@@ -103,7 +123,7 @@ button {
     }
 
     h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     .button {

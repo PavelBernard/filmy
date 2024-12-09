@@ -1,6 +1,5 @@
 // Zobrazení hlavní stránky
 function showMainPage() {
-    console.log("Navigace na hlavní stránku.");
     document.getElementById('mainPage').style.display = 'block';
     document.getElementById('setMoviePage').style.display = 'none';
 
@@ -15,7 +14,6 @@ function showMainPage() {
 
 // Zobrazení stránky pro nastavení filmu
 function showSetMoviePage() {
-    console.log("Navigace na nastavení filmu.");
     document.getElementById('mainPage').style.display = 'none';
     document.getElementById('setMoviePage').style.display = 'block';
 }
@@ -25,7 +23,6 @@ function saveMovie() {
     const movieName = document.getElementById('movieInput').value;
     if (movieName) {
         sessionStorage.setItem('favoriteMovie', movieName);
-        console.log(`Film ${movieName} byl uložen.`);
         showMainPage(); // Po uložení přejdeme zpět na hlavní stránku
     } else {
         alert("Prosím, zadejte název filmu.");
@@ -34,6 +31,5 @@ function saveMovie() {
 
 // Spustíme hlavní stránku při načtení stránky
 window.onload = function() {
-    console.log("Stránka byla načtena.");
     showMainPage();
 };
